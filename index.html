@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="C:\cesium\ThirdParty\Cesium\Cesium.js"></script>
+        
+        <!-- Use correct character set. -->
+        <meta charset="utf-8">
+        <!-- Tell IE to use the latest, best version. -->
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <!-- Make the app on mobile take up the full browser screen and disable user scaling. -->
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+        <title>HIT HOLON</title>
+        <!-- The Cesium library. -->
+        <script src="https://cesium.com/downloads/cesiumjs/releases/1.72/Build/Cesium/Cesium.js"></script>
+        <link href="https://cesium.com/downloads/cesiumjs/releases/1.72/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+        <!-- Style our app. -->
+        <link rel="stylesheet" href="index.css" media="screen">
+    </head>
+    <body>
+        <div class="cesium-measure-instructions" data-bind="visible: instructionsVisible" style="display: none; max-height: 507px;">
+            <!-- ko foreach: measurements -->
+            <div><div class="cesium-measure-icon" data-bind="html: icon" style="display: inline"><svg viewBox="0 0 30 30" height="15px" width="15px">
+          <g transform="translate(0,-267)">
+           <path d="m 4.934989,292.6549 20.67981,-20.80395"></path>
+            <circle r="2.0788691" cy="270.1637" cx="27.025297"></circle>
+            <circle r="2.0788691" cy="294.07068" cx="3.1183045"></circle>
+          </g>
+        </svg>
+</div><span data-bind="text: type">Distance</span></div>
+            <ul data-bind="foreach: instructions">
+                <li data-bind="text: $data">Click on the point cloud or the globe to set the start point and end points</li>
+            
+                <li data-bind="text: $data">To make a new measurement, click to clear the previous measurement</li>
+            </ul>
+            <hr>
+            
+            <div><div class="cesium-measure-icon" data-bind="html: icon" style="display: inline"><svg viewBox="0 0 30 30" height="15px" width="15px">
+          <g transform="translate(0,-267)">
+            <path d="m 4.934989,292.6549 20.67981,-20.80395"></path>
+            <circle r="2.0788691" cy="270.1637" cx="27.025297"></circle>
+            <circle r="2.0788691" cy="294.07068" cx="3.1183045"></circle>
+            <path style="stroke-dasharray:2.00314951, 1.00157475;stroke-dashoffset:0;" d="m 3.3194019,292.73274 -0.046996,-22.53109 21.6420984,-0.0266"></path>
+          </g>
+        </svg>
+</div><span data-bind="text: type">Component Distance</span></div>
+            <ul data-bind="foreach: instructions">
+                <li data-bind="text: $data">Click on the point cloud or the globe to set the start point and end points</li>
+            
+                <li data-bind="text: $data">To make a new measurement, click to clear the previous measurement</li>
+            </ul>
+            <hr>
+            
+            <div><div class="cesium-measure-icon" data-bind="html: icon" style="display: inline"><svg viewBox="0 0 30 30" height="15px" width="15px">
+           <g transform="translate(0,-267)">
+            <circle cx="3.8532958" cy="293.99896" r="2.0788691"></circle>
+            <circle cx="7.2651663" cy="276.26389" r="2.0788691"></circle>
+            <circle cx="24.571842" cy="285.56577" r="2.0788691"></circle>
+            <circle cx="26.916754" cy="270.38345" r="2.0788691"></circle>
+            <path d="m 3.7523356,294.14823 3.602242,-17.81109 17.3608064,9.35582 2.401494,-15.00934"></path>
+          </g>
+        </svg></div><span data-bind="text: type">Polyline Distance</span></div>
+            <ul data-bind="foreach: instructions">
+                <li data-bind="text: $data">Click to start drawing a polyline</li>
+            
+                <li data-bind="text: $data">Keep clicking to add more points</li>
+            
+                <li data-bind="text: $data">Double click to finish drawing</li>
+            </ul>
+            <hr>
+            
+            <div><div class="cesium-measure-icon" data-bind="html: icon" style="display: inline"><svg viewBox="0 0 30 30" height="15px" width="15px">
+          <g transform="translate(0,-267)">
+            <path d="m 5.5492003,281.78808 18.9375757,0.0497"></path>
+            <circle r="2.0788691" cy="281.63776" cx="3.0514872"></circle>
+            <circle r="2.0788691" cy="281.71384" cx="26.985731"></circle>
+          </g>
+        </svg></div><span data-bind="text: type">Horizontal distance</span></div>
+            <ul data-bind="foreach: instructions">
+                <li data-bind="text: $data">Click on the point cloud or the globe to set the start point</li>
+            
+                <li data-bind="text: $data">Move the mouse to drag the line</li>
+            
+                <li data-bind="text: $data">Press this shift key to clamp the direction of the line</li>
+            
+                <li data-bind="text: $data">Click again to set the end point</li>
+            
+                <li data-bind="text: $data">To make a new measurement, click to clear the previous measurement</li>
+            </ul>
+            <hr>
+            
+            <div><div class="cesium-measure-icon" data-bind="html: icon" style="display: inline"><svg viewBox="0 0 30 30" height="15px" width="15px">
+          <g transform="translate(0,-267)">
+            <path d="m 15.042838,272.34414 -0.0497,18.93758"></path>
+            <circle r="2.0788691" cy="270.01154" cx="15.078616"></circle>
+            <circle r="2.0788691" cy="293.97095" cx="15.092237"></circle>
+          </g>
+        </svg></div><span data-bind="text: type">Vertical distance</span></div>
+            <ul data-bind="foreach: instructions">
+                <li data-bind="text: $data">Click on the point cloud or the globe to set the start point</li>
+            
+                <li data-bind="text: $data">Move the mouse to drag the line</li>
+            
+                <li data-bind="text: $data">Click again to set the end point</li>
+            
+                <li data-bind="text: $data">To make a new measurement, click to clear the previous measurement</li>
+            </ul>
+            <hr>
+            
+            <div><div class="cesium-measure-icon" data-bind="html: icon" style="display: inline"><svg viewBox="0 0 30 30" height="15px" width="15px">
+      <g transform="translate(0,-267)">
+        <path d="m 15.042838,272.34414 0.01712,19.60575"></path>
+        <circle r="2.0788691" cy="270.01154" cx="15.078616"></circle>
+        <path d="m 0.64901081,296.20687 8.80039389,-6.01044 7.9375003,3.1183 12.347278,-3.34365"></path>
+      </g>
+    </svg></div><span data-bind="text: type">Height from terrain</span></div>
+            <ul data-bind="foreach: instructions">
+                <li data-bind="text: $data">Click on the point cloud to get a distance from that point to terrain</li>
+            </ul>
+            <hr>
+            
+            <div><div class="cesium-measure-icon" data-bind="html: icon" style="display: inline"><svg viewBox="0 0 30 30" height="15px" width="15px">
+          <g transform="translate(0,-267)">
+            <circle r="2.0788691" cy="293.99896" cx="3.8532958"></circle>
+            <circle r="2.0788691" cy="282.76791" cx="26.927404"></circle>
+            <circle r="2.0788691" cy="270.20621" cx="4.0090437"></circle>
+            <path d="m 26.326048,283.77014 -9.394396,5.02295 -9.3943948,5.02295 0.3471933,-10.64726 0.3471933,-10.64726 9.0472022,5.62431 z" transform="matrix(1.1625734,0,0,0.99297729,-4.6787891,1.2180486)"></path>
+          </g>
+        </svg></div><span data-bind="text: type">Area</span></div>
+            <ul data-bind="foreach: instructions">
+                <li data-bind="text: $data">Click to start drawing a polygon</li>
+            
+                <li data-bind="text: $data">Keep clicking to add more points</li>
+            
+                <li data-bind="text: $data">Double click to finish drawing</li>
+            </ul>
+            <hr>
+            
+            <div><div class="cesium-measure-icon" data-bind="html: icon" style="display: inline"><svg viewBox="0 0 30 30" height="15px" width="15px">
+          <g transform="translate(0,-267)">
+            <circle r="2.0788691" cy="281.90503" cx="15.212251"></circle>
+          </g>
+        </svg></div><span data-bind="text: type">Point coordinates</span></div>
+            <ul data-bind="foreach: instructions">
+                <li data-bind="text: $data">Move the mouse to see the longitude, latitude and height of the point</li>
+            </ul>
+            <hr>
+            <!-- /ko -->
+        </div>
+
+        <div id="measureContainer"></div>
+        
+        <!-- A container for the Cesium Viewer to live in. -->
+        <div id="cesiumContainer">
+            <var viewer = new Cesium.Viewer("cesiumContainer");></var>
+        </div>
+        
+        
+
+        <!-- Some input elements for our app. -->
+        <div class="backdrop" id="menu">
+            <h2>Sample NYC Geocaches</h2>
+            <span><strong>Camera Mode</strong></span>
+            <div class="nowrap">
+                <input id="freeMode" name="source" type="radio" checked/>
+                <label for="freeMode">Free</label>
+            </div>
+            <div class="nowrap">
+                <input id="droneMode" name="source" type="radio"/>
+                <label for="droneMode">Drone View</label>
+            </div>
+            <br>
+            <span><strong>3d Tile Styling</strong></span>
+            <div class="nowrap">
+                <select id="tileStyle">
+                    <option value="none">None</option>
+                    <option value="height">Height</option>
+                    <option value="transparent">Transparent</option>
+                </select>
+            </div>
+            <br>
+            <span><strong>Display Options</strong></span>
+            <div class="nowrap">
+                <input id="shadows" type="checkbox"/>
+                <label for="shadows">Shadows</label>
+            </div>
+
+            <div class="nowrap">
+                <input id="neighborhoods" type="checkbox" checked/>
+                <label for="neighborhoods">Neighborhoods</label>
+            </div>
+            <br>
+        </div>
+        <div id="loadingIndicator" class="cover">
+            <div id="loadingIcon" class="loadingIndicator"></div>
+        </div>
+
+        <!-- Our app code. -->
+        <script src="Source/App.js"></script>
+        
+    </body>
+</html>
